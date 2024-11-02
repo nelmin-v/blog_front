@@ -20,7 +20,8 @@ import {MatDialog} from "@angular/material/dialog";
 import {ReportDialog} from "app/pages/content/report-dialog/report-dialog.component";
 import {CommentListComponent} from "app/pages/comment-list/comment-list.component";
 import {Actions} from "app/core/service/content/actions";
-import {UserInfo} from "../../../core/service/auth/user-info";
+import {UserInfo} from "app/core/service/auth/user-info";
+import {AdsDirective} from "app/pages/widgets/ads/ads-directive.component";
 
 @Component({
   selector: 'view-content',
@@ -33,6 +34,7 @@ import {UserInfo} from "../../../core/service/auth/user-info";
     SafeHtmlPipe,
     CommonModule,
     CommentListComponent,
+    AdsDirective,
   ],
   animations: animations,
   templateUrl: './view-content.component.html',

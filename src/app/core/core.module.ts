@@ -19,6 +19,7 @@ import {StoriesService} from "app/core/service/stories/stories.service";
 import {TagService} from "app/core/service/content/tag.service";
 import {ReportService} from "app/core/service/report.service";
 import {NotificationService} from "app/core/service/notification/notification.service";
+import {AdsDirective} from "../pages/widgets/ads/ads-directive.component";
 
 @NgModule({
   declarations: [],
@@ -31,6 +32,7 @@ import {NotificationService} from "app/core/service/notification/notification.se
     MaskitoDirective,
     SafeHtmlPipe,
     DragAndDropDirective,
+    AdsDirective,
     NgxSkeletonLoaderModule.forRoot({
       count: 3,
       theme: {
