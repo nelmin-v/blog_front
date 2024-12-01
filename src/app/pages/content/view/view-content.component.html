@@ -22,9 +22,9 @@
 
   <br>
   <mat-divider></mat-divider>
-  <br>
 
   <div class="additional-content" *ngIf="additionalContent.length > 0">
+    <br>
     <div class="same-contents" [@opacity-2]>
       <a *ngFor="let cont of additionalContent"
          routerLink="/content/view/{{ cont.id }}">
