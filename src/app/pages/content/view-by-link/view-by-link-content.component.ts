@@ -10,7 +10,7 @@ import {SafeHtmlPipe} from "app/core/pipe/safe-html";
 import {ViewContentComponent} from "app/pages/content/view/view-content.component";
 import {delay, takeUntil} from "rxjs";
 import {CommentListComponent} from "app/pages/comment-list/comment-list.component";
-import {Content} from "../../../core/service/content/content";
+import {AdsDirective} from "../../widgets/ads/ads-directive.component";
 
 @Component({
   selector: 'view-by-link-content',
@@ -23,6 +23,7 @@ import {Content} from "../../../core/service/content/content";
     SafeHtmlPipe,
     CommonModule,
     CommentListComponent,
+    AdsDirective,
   ],
   templateUrl: '../view/view-content.component.html',
   styleUrl: '../view/view-content.component.less'
@@ -72,14 +73,6 @@ export class ViewByLinkContentComponent extends ViewContentComponent {
           }
 
           this.loadAuthorInfo();
-
-          if (this.content.tags?.length > 0) {
-            this.listAdditionalContent()
-              .pipe(takeUntil(this.unSubscriber))
-              .subscribe({
-                next: (it) => (this.additionalContent = it ?? []),
-              });
-          }
         },
         error: () => this.state = 'empty'
       });
