@@ -10,6 +10,7 @@ import {SafeHtmlPipe} from "app/core/pipe/safe-html";
 import {ViewContentComponent} from "app/pages/content/view/view-content.component";
 import {delay, takeUntil} from "rxjs";
 import {CommentListComponent} from "app/pages/comment-list/comment-list.component";
+import {Content} from "../../../core/service/content/content";
 
 @Component({
   selector: 'view-by-link-content',
@@ -71,6 +72,14 @@ export class ViewByLinkContentComponent extends ViewContentComponent {
           }
 
           this.loadAuthorInfo();
+
+          if (this.content.tags?.length > 0) {
+            this.listAdditionalContent()
+              .pipe(takeUntil(this.unSubscriber))
+              .subscribe({
+                next: (it) => (this.additionalContent = it ?? []),
+              });
+          }
         },
         error: () => this.state = 'empty'
       });

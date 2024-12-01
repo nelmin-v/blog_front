@@ -20,10 +20,11 @@
     <ng-container *ngSwitchDefault [ngTemplateOutlet]="data"></ng-container>
   </ng-container>
 
+  <br>
+  <mat-divider></mat-divider>
+  <br>
+
   <div class="additional-content" *ngIf="additionalContent.length > 0">
-    <br>
-    <mat-divider></mat-divider>
-    <br>
     <div class="same-contents" [@opacity-2]>
       <a *ngFor="let cont of additionalContent"
          routerLink="/content/view/{{ cont.id }}">
