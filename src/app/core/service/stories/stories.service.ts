@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpMethod, HttpSenderService} from "app/core/service/base/http-sender.service";
+import {HttpSenderService} from "app/core/service/base/http-sender.service";
 import {Observable, of} from "rxjs";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -47,18 +47,18 @@ export class StoriesService {
     return of([
       {
         id: 1,
-        title: 'Участвуй в осеннем ивенте!',
-        description: 'Нажми чтобы узнать подробности',
-        link: 'event',
+        title: 'Результаты осеннего ивента!',
+        description: 'Список победителей',
+        link: 'event_result',
         lang: 'ru'
       },
-      // {
-      //   id: 2,
-      //   title: 'Функционал',
-      //   description: 'Публикуем описание нового функционала',
-      //   link: 'features',
-      //   lang: 'ru'
-      // }
+      {
+        id: 2,
+        title: 'Зимний ивент стартует',
+        description: 'Новый ивент, новые темы',
+        link: 'next_event',
+        lang: 'ru'
+      }
     ])
     // return this.httpSender.send(HttpMethod.GET, '/stories/list?lang=' + this.lang);
   }
