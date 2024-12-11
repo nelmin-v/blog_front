@@ -1,10 +1,10 @@
 <div class="top-menu">
   <div class="image" routerLink="/" *ngIf="!isMobile">
-    <img src="assets/images/logo_mobile.webp" alt="Mylog logo" height="157" width="493" />
+    <img src="assets/images/logo_mobile_santa.webp" alt="Mylog logo" height="157" width="493" />
   </div>
   <div class="buttons" [ngClass]="{ 'buttons-mobile': isMobile }">
     <div class="image" [ngClass]="{ 'image-mobile': isMobile }" routerLink="/" *ngIf="isMobile">
-      <img src="assets/images/logo_mobile.webp" alt="Mylog logo" height="157" width="493" />
+      <img src="assets/images/logo_mobile_santa.webp" alt="Mylog logo" height="157" width="493" />
     </div>
 
     <button mat-icon-button aria-label="Search" routerLink="/search" *ngIf="!hideSearchButton">
